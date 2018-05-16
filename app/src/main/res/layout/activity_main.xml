@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mConstraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pale_yellow"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textViewDesignation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TableRow
+        android:id="@+id/tableRow"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:padding="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDesignation">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageViewTile1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/tile" />
+
+            <TextView
+                android:id="@+id/textViewLetter1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/pale_green"
+                android:padding="2dp"
+                android:textSize="28sp"
+                tools:text="A" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageViewTile2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/tile" />
+
+            <TextView
+                android:id="@+id/textViewLetter2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/pale_green"
+                android:padding="2dp"
+                android:textSize="28sp"
+                tools:text="A" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageViewTile3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/tile" />
+
+            <TextView
+                android:id="@+id/textViewLetter3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/pale_green"
+                android:padding="2dp"
+                android:textSize="28sp"
+                tools:text="A" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageViewTile4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/tile" />
+
+            <TextView
+                android:id="@+id/textViewLetter4"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/pale_green"
+                android:padding="2dp"
+                android:textSize="28sp"
+                tools:text="A" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageViewTile5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/tile" />
+
+            <TextView
+                android:id="@+id/textViewLetter5"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/pale_green"
+                android:padding="2dp"
+                android:textSize="28sp"
+                tools:text="A" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageViewTile6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/tile" />
+
+            <TextView
+                android:id="@+id/textViewLetter6"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/pale_green"
+                android:padding="2dp"
+                android:textSize="28sp"
+                tools:text="B" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageViewTile7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/tile" />
+
+            <TextView
+                android:id="@+id/textViewLetter7"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/pale_green"
+                android:padding="2dp"
+                android:textSize="28sp"
+                tools:text="C" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageViewTile8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/tile" />
+
+            <TextView
+                android:id="@+id/textViewLetter8"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/pale_green"
+                android:padding="2dp"
+                android:textSize="28sp"
+                tools:text="D" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageViewTile9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/tile" />
+
+            <TextView
+                android:id="@+id/textViewLetter9"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/pale_green"
+                android:padding="2dp"
+                android:textSize="28sp"
+                tools:text="E" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageViewTile10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/tile" />
+
+            <TextView
+                android:id="@+id/textViewLetter10"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/pale_green"
+                android:padding="2dp"
+                android:textSize="28sp"
+                tools:text="F" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageViewTile11"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/tile" />
+
+            <TextView
+                android:id="@+id/textViewLetter11"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/pale_green"
+                android:padding="2dp"
+                android:textSize="28sp"
+                tools:text="G" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageViewTile12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/tile" />
+
+            <TextView
+                android:id="@+id/textViewLetter12"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/pale_green"
+                android:padding="2dp"
+                android:textSize="28sp"
+                tools:text="H" />
+        </FrameLayout>
+    </TableRow>
+
+    <EditText
+        android:id="@+id/editTextUserInput"
+        android:layout_width="252dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/hint"
+        android:inputType="text"
+        android:singleLine="true"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewResultInfo" />
+
+    <Button
+        android:id="@+id/buttonEnter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:onClick="onGuessButtonClick"
+        android:text="@string/guess"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextUserInput" />
+
+    <FrameLayout
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginBottom="48dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginStart="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/imageViewHangman1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/hangman1" />
+
+        <ImageView
+            android:id="@+id/imageViewHangman2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/hangman2" />
+
+        <ImageView
+            android:id="@+id/imageViewHangman3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/hangman3" />
+
+        <ImageView
+            android:id="@+id/imageViewHangman4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/hangman4" />
+
+        <ImageView
+            android:id="@+id/imageViewHangman5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/hangman5" />
+
+        <ImageView
+            android:id="@+id/imageViewHangman6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/hangman6" />
+
+        <ImageView
+            android:id="@+id/imageViewHangman7"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/hangman7" />
+
+        <ImageView
+            android:id="@+id/imageViewHangman8"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/hangman8" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/textViewResultInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableRow" />
+
+    <Button
+        android:id="@+id/buttonAnotherWord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="28dp"
+        android:layout_marginStart="28dp"
+        android:onClick="onAnotherWordButtonClick"
+        android:text="@string/another_word"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/buttonAbout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:onClick="onAboutButtonClick"
+        android:text="@string/about_program"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Угадайте слово</string>
+    <string name="hint">Введите букву или все слово</string>
+    <string name="guess">Угадать</string>
+    <string name="another_word">Другое слово</string>
+    <string name="about_program">О программе</string>
+    <string name="you_are_right">Вы правы!</string>
+    <string name="no_such_letter">Буквы %1$s нет в этом слове</string>
+    <string name="you_loose">
+        К сожалению, вы не угадали.\n
+        Попробуйте другое слово!
+    </string>
+
+    <string name="title_activity_about">О программе</string>
+</resources>

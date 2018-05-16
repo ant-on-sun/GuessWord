@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Guess Word</string>
+    <string name="hint">Enter a letter or entire word</string>
+    <string name="guess">Guess</string>
+    <string name="another_word">Another word</string>
+    <string name="about_program">About</string>
+    <string name="you_are_right">You are right!</string>
+    <string name="no_such_letter">There is no letter %1$s in this word</string>
+    <string name="you_loose">
+        Unfortunately, you did not guess the word.\n
+        Try with another one!
+    </string>
+
+    <string name="title_activity_about">About Program</string>
+
+
+</resources>

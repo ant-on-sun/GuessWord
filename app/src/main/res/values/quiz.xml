@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- The maximum length of a given word (the word after ':') is 12 letters. -->
+    <string-array name="quiz_array">
+        <item>
+            Once she was abducted by Zeus,\n
+            and now on her flag twelve stars:
+            Europe
+        </item>
+        <item>
+            This planet is nearest the sun:
+            Mercury
+        </item>
+        <item>
+            The lightest existing metal:
+            Aluminium
+        </item>
+        <item>
+            This Italian artist painted the Birth of Venus:
+            Botticelli
+        </item>
+        <item>
+            In this city you can see\n
+            Michelangelo’s David:
+            Florence
+        </item>
+        <item>
+            This country once was called Rhodesia:
+            Zimbabwe
+        </item>
+        <item>
+            On this island Napoleon was born:
+            Corsica
+        </item>
+        <item>
+            Another name for the study of fossils:
+            Paleontology
+        </item>
+        <item>
+            This cheese is traditionally used for pizzas:
+            Mozzarella
+        </item>
+        <item>
+            This beer is marketed as The king of beers:
+            Budweiser
+        </item>
+
+        <item>
+            He was Mozart's great rival:
+            Salieri
+        </item>
+        <item>
+            This country had a Prime Minister\n
+            and President who were twin brothers:
+            Poland
+        </item>
+        <item>
+            Name of the German airline:
+            Lufthansa
+        </item>
+        <item>
+            The most famous university of Paris:
+            Sorbonne
+        </item>
+        <item>
+            It is both a French wine region\n
+            and a luxury American automobile:
+            Cadillac
+        </item>
+        <item>
+            This country is named after Venice:
+            Venezuela
+        </item>
+        <item>
+            He killed the Minotaur:
+            Theseus
+        </item>
+        <item>
+            She was the imaginary love of Don Quixote:
+            Dulcinea
+        </item>
+        <item>
+            He said \"I think therefore I am\":
+            Descartes
+        </item>
+        <item>
+            Posture in yoga:
+            Asana
+        </item>
+
+        <item>
+            This species of ape has a natural\n
+            copper tinge to its hair or fur:
+            Orangutan
+        </item>
+        <item>
+            Tarzan's main item of clothing:
+            Loincloth
+        </item>
+        <item>
+            Pigs are used to sniff out this delicacy:
+            Truffle
+        </item>
+        <item>
+            A word that can be spelt the same\n
+            both backwards and forwards:
+            Palindrome
+        </item>
+        <item>
+            This gas is most predominant in the sun:
+            Hydrogen
+        </item>
+        <item>
+            He was the first to say\n
+            that the earth orbited the sun:
+            Copernicus
+        </item>
+        <item>
+            He designed a labyrinth for King Minos:
+            Daedalus
+        </item>
+        <item>
+            This festival commemorates\n
+            the visit of the Magi to Jesus:
+            Epiphany
+        </item>
+        <item>
+            On this animal  you'll find a howdah:
+            Elephant
+        </item>
+        <item>
+            Horse’s name on which the Odin rode:
+            Sleipnir
+        </item>
+
+        <item>
+            The smallest breed of dog:
+            Chihuahua
+        </item>
+        <item>
+            What kind of animal is a gribble?:
+            Crustacean
+        </item>
+        <item>
+            A venomous snake that lives in Japan:
+            Mamushi
+        </item>
+        <item>
+            An assembly of owls is referred to as a:
+            Parliament
+        </item>
+        <item>
+            The name for a two-humped camel:
+            Bactrian
+        </item>
+        <item>
+            When you have more fingers\n
+            than you should:
+            Polydactyly
+        </item>
+        <item>
+            This animal is the symbol\n
+            of the motor manufacturer Suzuki:
+            Rhinoceros
+        </item>
+        <item>
+            The name of the highest mountain in Africa:
+            Kilimanjaro
+        </item>
+        <item>
+            This country is popularly knowns\n
+            as ‘land of the windmills’:
+            Netherlands
+        </item>
+        <item>
+            A person able to use both hands\n
+            with equal skill:
+            Ambidextrous
+        </item>
+
+        <item>
+            Formations that come down\n
+            from the ceiling in a cave:
+            Stalactites
+        </item>
+        <item>
+            A reptile in New Zealand\n
+            which has a third eye on its forehead:
+            Tuatara
+        </item>
+        <item>
+            For producing high frequency\n
+            carrier wave we can use:
+            Oscillator
+        </item>
+        <item>
+            What is the common name of Agaricus?:
+            Mushroom
+        </item>
+        <item>
+            This non-metal conducts electricity\n
+            by the movement of electrons:
+            Graphite
+        </item>
+        <item>
+            Epic is a web browser\n
+            made by which country?:
+            India
+        </item>
+        <item>
+            The visible part of the Sun:
+            Photosphere
+        </item>
+        <item>
+            The day on which the Sun’s direct\n
+            rays cross the celestial equator:
+            Equinox
+        </item>
+        <item>
+            Moths are a member of this order:
+            Lepidoptera
+        </item>
+        <item>
+            By that scale, water freezes at 32 degrees:
+            Fahrenheit
+        </item>
+
+
+        <item>
+            Who said, \"God does not play dice with the universe\"?:
+            Einstein
+        </item>
+        <item>
+            What is a tropical cyclone called\n
+            in the Atlantic Ocean?:
+            Hurricane
+        </item>
+        <item>
+            The name for the aircraft body:
+            Fuselage
+        </item>
+        <item>
+            This millionaire industrialist\n
+            started in Cleveland:
+            Rockefeller
+        </item>
+        <item>
+            The lowermost layer of the atmosphere:
+            Troposphere
+        </item>
+        <item>
+            The hot desert which is covered\n
+            with large rocks:
+            Hamada
+        </item>
+        <item>
+            The surface of the continental crust:
+            Sial
+        </item>
+        <item>
+            The science of making maps:
+            Cartography
+        </item>
+        <item>
+            The rocky crust of the earth\n
+            on which we live:
+            Lithosphere
+        </item>
+        <item>
+            The process of wastage of glaciers:
+            Ablation
+        </item>
+
+        <item>
+            Limestone when metamorphosed is:
+            Marble
+        </item>
+        <item>
+            The most important factor for\n
+            determining the climate of a place:
+            Latitude
+        </item>
+        <item>
+            It was the first metal found out by men:
+            Copper
+        </item>
+        <item>
+            What compelled the Neolithic men\n
+            to stay in one place?:
+            Agriculture
+        </item>
+        <item>
+            Greek astronomer in the ancient period:
+            Ptolemy
+        </item>
+        <item>
+            This is the only animal in the world\n
+            to have four horns:
+            Chausingha
+        </item>
+        <item>
+            In what sport would one find an Albion round?:
+            Archery
+        </item>
+        <item>
+            In polo, what is a period of play called?:
+            Chukka
+        </item>
+        <item>
+            It follows a deuce in tennis:
+            Advantage
+        </item>
+        <item>
+            In this country golf was invented:
+            Scotland
+        </item>
+
+        <item>
+            This sport was the first\n
+            to have a world championship:
+            Billiards
+        </item>
+        <item>
+            A Turkish dish made of stuffed vegetables:
+            Dolma
+        </item>
+        <item>
+            It gives peppers their heat:
+            Capsaicin
+        </item>
+        <item>
+            It gives plants their green color:
+            Chlorophyll
+        </item>
+        <item>
+            It is India’s national fruit:
+            Mango
+        </item>
+        <item>
+            This instrument is known as the \"thumb piano\":
+            Kalimba
+        </item>
+        <item>
+            This instrument is thought to be\n
+            closest to the human voice:
+            Violin
+        </item>
+        <item>
+            A term that means \"very loud\":
+            Fortissimo
+        </item>
+        <item>
+            What kind of weapon is a falchion?:
+            Sword
+        </item>
+        <item>
+            He fell in love with his own reflection:
+            Narcissus
+        </item>
+
+        <item>
+            In mythology, this nymph\n
+            was turned into a laurel bush:
+            Daphne
+        </item>
+        <item>
+            This American state was named\n
+            for the wife of Charles I:
+            Maryland
+        </item>
+        <item>
+            A female deer:
+            Doe
+        </item>
+        <item>
+            It contains juniper as a flavour:
+            Gin
+        </item>
+        <item>
+            This country is famous for moussaka:
+            Greece
+        </item>
+        <item>
+            This bird has the largest wing span:
+            Albatross
+        </item>
+        <item>
+            What does a cooper make?:
+            Barrel
+        </item>
+        <item>
+            Which black and white bird\n
+            is usually accused of stealing?:
+            Magpie
+        </item>
+        <item>
+            He wrote The Unfinished Symphony:
+            Schubert
+        </item>
+        <item>
+            What is kelp?:
+            Seaweed
+        </item>
+
+        <item>
+            A legendary chief of the Onondaga tribe:
+            Hiawatha
+        </item>
+        <item>
+            Greek word for 'easy death':
+            Euthanasia
+        </item>
+        <item>
+            What type of song is a doxology?:
+            Hymn
+        </item>
+        <item>
+            The legendary son\n
+            of British king Luther Pendragon:
+            Arthur
+        </item>
+        <item>
+            It is measured in Hertz:
+            Frequency
+        </item>
+        <item>
+            A line running through places\n
+            of equal pressure:
+            Isobar
+        </item>
+        <item>
+            From this creature\n
+            sepia was originally obtained:
+            Cuttlefish
+        </item>
+        <item>
+            A surveyor use to measure\n
+            horizontal and vertical angles:
+            Theodolite
+        </item>
+        <item>
+            It is the common name for the tree\n
+            known as the arbutus:
+            Strawberry
+        </item>
+        <item>
+            The Carthaginian general who defeated\n
+            the Romans at the Battle of Cannae:
+            Hannibal
+        </item>
+    </string-array>
+</resources>
