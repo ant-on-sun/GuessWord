@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String KEY_INDEX = "INDEX";
     private static final String KEY_SHUFFLED_ARRAY = "SHUFFLED_ARRAY";
     private static final String KEY_NUMBER_OF_WRONGS = "NUMBER_OF_WRONGS";
+    private static final String KEY_OPENED_LETTERS = "OPENED_LETTERS";
     private static final int MAX_WORD_LENGTH = 12;
     private static final int MAX_NUMBER_OF_WRONGS = 7;
 
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     private List<ImageView> listOfImageViewPictures = new ArrayList<>();
     private int numberOfLetters;
     private int numberOfWrongs;
+    private boolean[] openedLetters;
 
     private ConstraintLayout mConstraintLayout;
     private TextView textViewDesignation;
@@ -192,6 +194,7 @@ public class MainActivity extends AppCompatActivity {
             mIndexOfElementInShuffledList = savedInstanceState.getInt(KEY_INDEX);
             quizList = savedInstanceState.getStringArrayList(KEY_SHUFFLED_ARRAY);
             numberOfWrongs = savedInstanceState.getInt(KEY_NUMBER_OF_WRONGS);
+            openedLetters = savedInstanceState.getBooleanArray(KEY_OPENED_LETTERS);
         } else {
             mIndexOfElementInShuffledList = 0;
             numberOfWrongs = 0;
@@ -201,6 +204,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
         setupQuizDesignationAndAnswer();
+        if (openedLetters == null) {
+            openedLetters = new boolean[numberOfLetters];
+        }
+        handleOpenedLetters();
         handlePictures();
     }
 
@@ -213,6 +220,7 @@ public class MainActivity extends AppCompatActivity {
                     if (String.valueOf(quizAnswer.charAt(i)).equalsIgnoreCase(userInput)){
                         listOfImageViewTiles.get(i).setVisibility(View.INVISIBLE);
                         listOfTextViewLetters.get(i).setVisibility(View.VISIBLE);
+                        openedLetters[i] = true;
                     }
                 }
                 textViewResultInfo.setText("");
@@ -228,6 +236,7 @@ public class MainActivity extends AppCompatActivity {
                 for (int i = 0; i < numberOfLetters; i++){
                     listOfImageViewTiles.get(i).setVisibility(View.INVISIBLE);
                     listOfTextViewLetters.get(i).setVisibility(View.VISIBLE);
+                    openedLetters[i] = true;
                 }
                 textViewResultInfo.setText(getString(R.string.you_are_right));
                 editTextUserInput.getText().clear();
@@ -269,6 +278,7 @@ public class MainActivity extends AppCompatActivity {
         outState.putInt(KEY_INDEX, mIndexOfElementInShuffledList);
         outState.putStringArrayList(KEY_SHUFFLED_ARRAY, new ArrayList<>(quizList));
         outState.putInt(KEY_NUMBER_OF_WRONGS, numberOfWrongs);
+        outState.putBooleanArray(KEY_OPENED_LETTERS, openedLetters);
     }
 
     private void handlePictures(){
@@ -296,6 +306,17 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 listOfTextViewLetters.get(i).setVisibility(View.GONE);
                 listOfImageViewTiles.get(i).setVisibility(View.GONE);
+            }
+        }
+    }
+
+    private void handleOpenedLetters(){
+        if (openedLetters != null){
+            for (int i = 0; i < numberOfLetters; i++){
+                if (openedLetters[i]) {
+                    listOfImageViewTiles.get(i).setVisibility(View.INVISIBLE);
+                    listOfTextViewLetters.get(i).setVisibility(View.VISIBLE);
+                }
             }
         }
     }
