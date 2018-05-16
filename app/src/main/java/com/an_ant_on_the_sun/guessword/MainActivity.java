@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
     private static final String KEY_SHUFFLED_ARRAY = "SHUFFLED_ARRAY";
     private static final String KEY_NUMBER_OF_WRONGS = "NUMBER_OF_WRONGS";
     private static final String KEY_OPENED_LETTERS = "OPENED_LETTERS";
+    private static final String KEY_TEXT_INFO = "TEXT_INFO";
+    private static final String KEY_EDIT_TEXT_IS_ENABLED = "EDIT_TEXT_IS_ENABLED";
     private static final int MAX_WORD_LENGTH = 12;
     private static final int MAX_NUMBER_OF_WRONGS = 7;
 
@@ -38,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
     private int numberOfLetters;
     private int numberOfWrongs;
     private boolean[] openedLetters;
+    private boolean editTextIsEnabled;
 
     private ConstraintLayout mConstraintLayout;
     private TextView textViewDesignation;
@@ -195,12 +198,16 @@ public class MainActivity extends AppCompatActivity {
             quizList = savedInstanceState.getStringArrayList(KEY_SHUFFLED_ARRAY);
             numberOfWrongs = savedInstanceState.getInt(KEY_NUMBER_OF_WRONGS);
             openedLetters = savedInstanceState.getBooleanArray(KEY_OPENED_LETTERS);
+            textViewResultInfo.setText(savedInstanceState.getString(KEY_TEXT_INFO));
+            editTextIsEnabled = savedInstanceState.getBoolean(KEY_EDIT_TEXT_IS_ENABLED);
+            editTextUserInput.setEnabled(editTextIsEnabled);
         } else {
             mIndexOfElementInShuffledList = 0;
             numberOfWrongs = 0;
             quizArray = getResources().getStringArray(R.array.quiz_array);
             quizList = Arrays.asList(quizArray);
             Collections.shuffle(quizList);
+            editTextIsEnabled = true;
         }
 
         setupQuizDesignationAndAnswer();
@@ -233,23 +240,17 @@ public class MainActivity extends AppCompatActivity {
             }
         } else {
             if (quizAnswer.equalsIgnoreCase(userInput)){
-                for (int i = 0; i < numberOfLetters; i++){
-                    listOfImageViewTiles.get(i).setVisibility(View.INVISIBLE);
-                    listOfTextViewLetters.get(i).setVisibility(View.VISIBLE);
-                    openedLetters[i] = true;
-                }
-                textViewResultInfo.setText(getString(R.string.you_are_right));
-                editTextUserInput.getText().clear();
-                editTextUserInput.setEnabled(false);
+                setWinState();
             } else {
                 numberOfWrongs = MAX_NUMBER_OF_WRONGS;
                 handlePictures();
             }
         }
+        if (userHasWon(openedLetters)){
+            setWinState();
+        }
         if (numberOfWrongs >= MAX_NUMBER_OF_WRONGS){
-            textViewResultInfo.setText(getString(R.string.you_loose));
-            editTextUserInput.getText().clear();
-            editTextUserInput.setEnabled(false);
+            setLooseState();
         }
     }
 
@@ -262,8 +263,10 @@ public class MainActivity extends AppCompatActivity {
         numberOfWrongs = 0;
         textViewResultInfo.setText("");
         setupQuizDesignationAndAnswer();
+        openedLetters = new boolean[numberOfLetters];
         handlePictures();
         editTextUserInput.setEnabled(true);
+        editTextIsEnabled = true;
     }
 
     public void onAboutButtonClick(View view){
@@ -279,6 +282,8 @@ public class MainActivity extends AppCompatActivity {
         outState.putStringArrayList(KEY_SHUFFLED_ARRAY, new ArrayList<>(quizList));
         outState.putInt(KEY_NUMBER_OF_WRONGS, numberOfWrongs);
         outState.putBooleanArray(KEY_OPENED_LETTERS, openedLetters);
+        outState.putString(KEY_TEXT_INFO, textViewResultInfo.getText().toString());
+        outState.putBoolean(KEY_EDIT_TEXT_IS_ENABLED, editTextIsEnabled);
     }
 
     private void handlePictures(){
@@ -319,6 +324,34 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }
+    }
+
+    private void setWinState(){
+        for (int i = 0; i < numberOfLetters; i++){
+            listOfImageViewTiles.get(i).setVisibility(View.INVISIBLE);
+            listOfTextViewLetters.get(i).setVisibility(View.VISIBLE);
+            openedLetters[i] = true;
+        }
+        textViewResultInfo.setText(getString(R.string.you_are_right));
+        editTextUserInput.getText().clear();
+        editTextUserInput.setEnabled(false);
+        editTextIsEnabled = false;
+    }
+
+    private void setLooseState(){
+        textViewResultInfo.setText(getString(R.string.you_loose));
+        editTextUserInput.getText().clear();
+        editTextUserInput.setEnabled(false);
+        editTextIsEnabled = false;
+    }
+
+    private boolean userHasWon(boolean[] bArray){
+        for (int i = 0; i < bArray.length; i++){
+            if (!bArray[i]){
+                return false;
+            }
+        }
+        return true;
     }
 
 }

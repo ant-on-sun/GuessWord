@@ -5,7 +5,10 @@
     <string name="guess">Угадать</string>
     <string name="another_word">Другое слово</string>
     <string name="about_program">О программе</string>
-    <string name="you_are_right">Вы правы!</string>
+    <string name="you_are_right">
+        Вы правы!\n
+        Попробуйте угадать еще одно слово.
+    </string>
     <string name="no_such_letter">Буквы \'%1$s\' нет в этом слове</string>
     <string name="you_loose">
         К сожалению, вы не угадали.\n
