@@ -16,4 +16,5 @@
     </string>
 
     <string name="title_activity_about">О программе</string>
+    <string name="io_exception">Can\\\'t load file %1$s</string>
 </resources>

@@ -1,6 +1,10 @@
 package com.an_ant_on_the_sun.guessword;
 
 import android.content.Intent;
+import android.content.res.AssetFileDescriptor;
+import android.content.res.AssetManager;
+import android.media.AudioManager;
+import android.media.SoundPool;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,9 +15,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.an_ant_on_the_sun.guessword.controller.GetQuestionAndAnswerFromString;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -28,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String KEY_EDIT_TEXT_IS_ENABLED = "EDIT_TEXT_IS_ENABLED";
     private static final int MAX_WORD_LENGTH = 12;
     private static final int MAX_NUMBER_OF_WRONGS = 7;
+    private static final String BUTTON_CLICK_FILE_NAME = "sounds/button_click.mp3";
 
     private String[] quizArray;
     private List<String> quizList = new ArrayList<>();
@@ -41,6 +48,11 @@ public class MainActivity extends AppCompatActivity {
     private int numberOfWrongs;
     private boolean[] openedLetters;
     private boolean editTextIsEnabled;
+
+    private SoundPool mSoundPool;
+    private AssetManager mAssetManager;
+    private int mButtonClickSoundId;
+    private int mStreamID;
 
     private ConstraintLayout mConstraintLayout;
     private TextView textViewDesignation;
@@ -219,15 +231,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public  void onGuessButtonClick(View view){
+        playSound(mButtonClickSoundId);
         String userInput = editTextUserInput.getText().toString().toUpperCase();
-
         if (userInput.length() == 1){
             if (quizAnswer.contains(userInput)){
                 for (int i = 0; i < numberOfLetters; i++){
                     if (String.valueOf(quizAnswer.charAt(i)).equalsIgnoreCase(userInput)){
-                        listOfImageViewTiles.get(i).setVisibility(View.INVISIBLE);
-                        listOfTextViewLetters.get(i).setVisibility(View.VISIBLE);
-                        openedLetters[i] = true;
+                        openLetter(i);
                     }
                 }
                 textViewResultInfo.setText("");
@@ -255,6 +265,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onAnotherWordButtonClick(View view){
+        playSound(mButtonClickSoundId);
         if (mIndexOfElementInShuffledList >= quizList.size() - 1){
             mIndexOfElementInShuffledList = 0;
         } else {
@@ -270,6 +281,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onAboutButtonClick(View view){
+        playSound(mButtonClickSoundId);
         Intent intentAbout = new Intent(MainActivity.this, AboutActivity.class);
         startActivity(intentAbout);
     }
@@ -328,21 +340,15 @@ public class MainActivity extends AppCompatActivity {
 
     private void setWinState(){
         for (int i = 0; i < numberOfLetters; i++){
-            listOfImageViewTiles.get(i).setVisibility(View.INVISIBLE);
-            listOfTextViewLetters.get(i).setVisibility(View.VISIBLE);
-            openedLetters[i] = true;
+            openLetter(i);
         }
         textViewResultInfo.setText(getString(R.string.you_are_right));
-        editTextUserInput.getText().clear();
-        editTextUserInput.setEnabled(false);
-        editTextIsEnabled = false;
+        disableEditTextUserInput();
     }
 
     private void setLooseState(){
         textViewResultInfo.setText(getString(R.string.you_loose));
-        editTextUserInput.getText().clear();
-        editTextUserInput.setEnabled(false);
-        editTextIsEnabled = false;
+        disableEditTextUserInput();
     }
 
     private boolean userHasWon(boolean[] bArray){
@@ -354,4 +360,51 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    private void openLetter(int i){
+        listOfImageViewTiles.get(i).setVisibility(View.INVISIBLE);
+        listOfTextViewLetters.get(i).setVisibility(View.VISIBLE);
+        openedLetters[i] = true;
+    }
+
+    private void disableEditTextUserInput(){
+        editTextUserInput.getText().clear();
+        editTextUserInput.setEnabled(false);
+        editTextIsEnabled = false;
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        mSoundPool = new SoundPool(3, AudioManager.STREAM_MUSIC,0);
+        mAssetManager = getAssets();
+        mButtonClickSoundId = getSoundFileId(BUTTON_CLICK_FILE_NAME);
+    }
+
+    private int getSoundFileId(String fileName){
+        AssetFileDescriptor assetFileDescriptor;
+        try{
+            assetFileDescriptor = mAssetManager.openFd(fileName);
+        } catch (IOException e){
+            e.printStackTrace();
+            Toast.makeText(getApplicationContext(),
+                    getString(R.string.load_file_error, fileName), Toast.LENGTH_SHORT).show();
+            return -1;
+        }
+        return mSoundPool.load(assetFileDescriptor, 1);
+    }
+
+    private int playSound(int soundFileId){
+        if (soundFileId > 0){
+            mStreamID = mSoundPool.play(soundFileId, 1, 1, 1, 0, 1);
+        }
+        return mStreamID;
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mSoundPool.release();
+        mSoundPool = null;
+    }
 }

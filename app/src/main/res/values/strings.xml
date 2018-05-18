@@ -13,8 +13,10 @@
         Unfortunately, you did not guess the word.\n
         Try with another one!
     </string>
+    <string name="load_file_error">Can\'t load file %1$s</string>
 
     <string name="title_activity_about">About Program</string>
+
 
 
 </resources>
