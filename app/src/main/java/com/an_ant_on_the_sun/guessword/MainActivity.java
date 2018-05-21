@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -26,6 +27,8 @@ import java.util.Collections;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+    private static final String TAG = "GuessWord";
+
     private static final String KEY_INDEX = "INDEX";
     private static final String KEY_SHUFFLED_ARRAY = "SHUFFLED_ARRAY";
     private static final String KEY_NUMBER_OF_WRONGS = "NUMBER_OF_WRONGS";
@@ -206,6 +209,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
         if (savedInstanceState != null){
+            if (BuildConfig.DEBUG){
+                Log.d(TAG, "In MainActivity, savedInstanceState is not null");
+            }
             mIndexOfElementInShuffledList = savedInstanceState.getInt(KEY_INDEX);
             quizList = savedInstanceState.getStringArrayList(KEY_SHUFFLED_ARRAY);
             numberOfWrongs = savedInstanceState.getInt(KEY_NUMBER_OF_WRONGS);
@@ -214,6 +220,9 @@ public class MainActivity extends AppCompatActivity {
             editTextIsEnabled = savedInstanceState.getBoolean(KEY_EDIT_TEXT_IS_ENABLED);
             editTextUserInput.setEnabled(editTextIsEnabled);
         } else {
+            if (BuildConfig.DEBUG){
+                Log.d(TAG, "In MainActivity, savedInstanceState is null");
+            }
             mIndexOfElementInShuffledList = 0;
             numberOfWrongs = 0;
             quizArray = getResources().getStringArray(R.array.quiz_array);
@@ -386,7 +395,10 @@ public class MainActivity extends AppCompatActivity {
         try{
             assetFileDescriptor = mAssetManager.openFd(fileName);
         } catch (IOException e){
-            e.printStackTrace();
+            if (BuildConfig.DEBUG){
+                Log.e(TAG, "In MainActivity getSoundFileId IOException:", e);
+            }
+            //e.printStackTrace();
             Toast.makeText(getApplicationContext(),
                     getString(R.string.load_file_error, fileName), Toast.LENGTH_SHORT).show();
             return -1;
