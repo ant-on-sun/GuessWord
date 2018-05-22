@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/pale_yellow"
-    tools:context=".MainActivity">
+    tools:context=".view.MainActivity">
 
     <TextView
         android:id="@+id/textViewDesignation"
@@ -328,7 +328,7 @@
     <FrameLayout
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="24dp"
         android:layout_marginEnd="32dp"
         android:layout_marginLeft="32dp"
         android:layout_marginRight="32dp"

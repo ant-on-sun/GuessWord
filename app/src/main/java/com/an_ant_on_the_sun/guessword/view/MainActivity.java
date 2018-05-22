@@ -1,4 +1,4 @@
-package com.an_ant_on_the_sun.guessword;
+package com.an_ant_on_the_sun.guessword.view;
 
 import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
@@ -18,6 +18,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.an_ant_on_the_sun.guessword.BuildConfig;
+import com.an_ant_on_the_sun.guessword.R;
 import com.an_ant_on_the_sun.guessword.controller.GetQuestionAndAnswerFromString;
 
 import java.io.IOException;
@@ -37,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
     private static final String KEY_EDIT_TEXT_IS_ENABLED = "EDIT_TEXT_IS_ENABLED";
     private static final int MAX_WORD_LENGTH = 12;
     private static final int MAX_NUMBER_OF_WRONGS = 7;
-    private static final String BUTTON_CLICK_FILE_NAME = "sounds/button_click.mp3";
 
     private String[] quizArray;
     private List<String> quizList = new ArrayList<>();
@@ -55,7 +56,10 @@ public class MainActivity extends AppCompatActivity {
     private SoundPool mSoundPool;
     private AssetManager mAssetManager;
     private int mButtonClickSoundId;
+    private int mSoundWinFileId;
     private int mStreamID;
+    private List<String> stickmanSoundFileName; //= new FileNames().getStickmanSounds();
+    private int[] stickmanSoundFileId;
 
     private ConstraintLayout mConstraintLayout;
     private TextView textViewDesignation;
@@ -96,8 +100,6 @@ public class MainActivity extends AppCompatActivity {
     private ImageView imageViewHangman8;
     private Button buttonAnotherWord;
     private Button buttonAbout;
-    //private VideoView videoViewForMovie;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -142,7 +144,6 @@ public class MainActivity extends AppCompatActivity {
         imageViewHangman7 = findViewById(R.id.imageViewHangman7);
         imageViewHangman8 = findViewById(R.id.imageViewHangman8);
         buttonAnotherWord = findViewById(R.id.buttonAnotherWord);
-        //videoViewForMovie = findViewById(R.id.videoViewForMovie);
 
         listOfTextViewLetters.addAll(Arrays.asList(
                 textViewLetter1,
@@ -231,6 +232,15 @@ public class MainActivity extends AppCompatActivity {
             editTextIsEnabled = true;
         }
 
+        mSoundPool = new SoundPool(3, AudioManager.STREAM_MUSIC,0);
+        mAssetManager = getAssets();
+        mButtonClickSoundId = getSoundFileId(FileNames.BUTTON_CLICK_FILE_NAME);
+        mSoundWinFileId = getSoundFileId(FileNames.SOUND_WIN_FILE_NAME);
+        stickmanSoundFileName = new FileNames().getStickmanSounds();
+        stickmanSoundFileId = new int[stickmanSoundFileName.size()];
+        for (int i = 0; i < stickmanSoundFileId.length; i++){
+            stickmanSoundFileId[i] = getSoundFileId(stickmanSoundFileName.get(i));
+        }
         setupQuizDesignationAndAnswer();
         if (openedLetters == null) {
             openedLetters = new boolean[numberOfLetters];
@@ -260,6 +270,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
             if (quizAnswer.equalsIgnoreCase(userInput)){
                 setWinState();
+                playSound(mSoundWinFileId);
             } else {
                 numberOfWrongs = MAX_NUMBER_OF_WRONGS;
                 handlePictures();
@@ -267,6 +278,7 @@ public class MainActivity extends AppCompatActivity {
         }
         if (userHasWon(openedLetters)){
             setWinState();
+            playSound(mSoundWinFileId);
         }
         if (numberOfWrongs >= MAX_NUMBER_OF_WRONGS){
             setLooseState();
@@ -311,6 +323,7 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < listOfImageViewPictures.size(); i++){
             if (i == numberOfWrongs){
                 listOfImageViewPictures.get(i).setVisibility(View.VISIBLE);
+                playSound(stickmanSoundFileId[i]);
             } else {
                 listOfImageViewPictures.get(i).setVisibility(View.INVISIBLE);
             }
@@ -385,9 +398,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-        mSoundPool = new SoundPool(3, AudioManager.STREAM_MUSIC,0);
-        mAssetManager = getAssets();
-        mButtonClickSoundId = getSoundFileId(BUTTON_CLICK_FILE_NAME);
+//        mSoundPool = new SoundPool(3, AudioManager.STREAM_MUSIC,0);
+//        mAssetManager = getAssets();
+
+
     }
 
     private int getSoundFileId(String fileName){
@@ -396,9 +410,9 @@ public class MainActivity extends AppCompatActivity {
             assetFileDescriptor = mAssetManager.openFd(fileName);
         } catch (IOException e){
             if (BuildConfig.DEBUG){
-                Log.e(TAG, "In MainActivity getSoundFileId IOException:", e);
+                Log.e(TAG, "In MainActivity getSoundFileId() IOException:", e);
             }
-            //e.printStackTrace();
+            e.printStackTrace();
             Toast.makeText(getApplicationContext(),
                     getString(R.string.load_file_error, fileName), Toast.LENGTH_SHORT).show();
             return -1;
@@ -416,7 +430,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        mSoundPool.release();
-        mSoundPool = null;
+//        mSoundPool.release();
+//        mSoundPool = null;
     }
 }
