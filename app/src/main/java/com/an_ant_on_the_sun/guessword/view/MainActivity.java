@@ -412,7 +412,7 @@ public class MainActivity extends AppCompatActivity {
             if (BuildConfig.DEBUG){
                 Log.e(TAG, "In MainActivity getSoundFileId() IOException:", e);
             }
-            e.printStackTrace();
+            //e.printStackTrace();
             Toast.makeText(getApplicationContext(),
                     getString(R.string.load_file_error, fileName), Toast.LENGTH_SHORT).show();
             return -1;

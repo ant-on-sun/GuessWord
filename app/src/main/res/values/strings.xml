@@ -16,6 +16,8 @@
     <string name="load_file_error">Can\'t load file %1$s</string>
 
     <string name="title_activity_about">About Program</string>
+    <string name="rate_app">Rate app</string>
+    <string name="support_developer">Support developer</string>
 
 
 
