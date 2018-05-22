@@ -3,8 +3,7 @@
     <!-- The maximum length of a given word (the word after ':') is 12 letters. -->
     <string-array name="quiz_array">
         <item>
-            Once she was abducted by Zeus,\n
-            and now on her flag twelve stars:
+            Once she was abducted by Zeus, and now on her flag twelve stars:
             Europe
         </item>
         <item>
@@ -20,8 +19,7 @@
             Botticelli
         </item>
         <item>
-            In this city you can see\n
-            Michelangelo’s David:
+            In this city you can see Michelangelo’s David:
             Florence
         </item>
         <item>
@@ -45,13 +43,14 @@
             Budweiser
         </item>
 
+        <!-- 10 -->
+
         <item>
             He was Mozart's great rival:
             Salieri
         </item>
         <item>
-            This country had a Prime Minister\n
-            and President who were twin brothers:
+            This country had a Prime Minister and President who were twin brothers:
             Poland
         </item>
         <item>
@@ -63,8 +62,7 @@
             Sorbonne
         </item>
         <item>
-            It is both a French wine region\n
-            and a luxury American automobile:
+            It is both a French wine region and a luxury American automobile:
             Cadillac
         </item>
         <item>
@@ -88,9 +86,10 @@
             Asana
         </item>
 
+        <!-- 20 -->
+
         <item>
-            This species of ape has a natural\n
-            copper tinge to its hair or fur:
+            This species of ape has a natural copper tinge to its hair or fur:
             Orangutan
         </item>
         <item>
@@ -102,8 +101,7 @@
             Truffle
         </item>
         <item>
-            A word that can be spelt the same\n
-            both backwards and forwards:
+            A word that can be spelt the same both backwards and forwards:
             Palindrome
         </item>
         <item>
@@ -111,8 +109,7 @@
             Hydrogen
         </item>
         <item>
-            He was the first to say\n
-            that the earth orbited the sun:
+            He was the first to say that the earth orbited the sun:
             Copernicus
         </item>
         <item>
@@ -120,8 +117,7 @@
             Daedalus
         </item>
         <item>
-            This festival commemorates\n
-            the visit of the Magi to Jesus:
+            This festival commemorates the visit of the Magi to Jesus:
             Epiphany
         </item>
         <item>
@@ -132,6 +128,8 @@
             Horse’s name on which the Odin rode:
             Sleipnir
         </item>
+
+        <!-- 30 -->
 
         <item>
             The smallest breed of dog:
@@ -154,13 +152,11 @@
             Bactrian
         </item>
         <item>
-            When you have more fingers\n
-            than you should:
+            When you have more fingers than you should:
             Polydactyly
         </item>
         <item>
-            This animal is the symbol\n
-            of the motor manufacturer Suzuki:
+            This animal is the symbol of the motor manufacturer Suzuki:
             Rhinoceros
         </item>
         <item>
@@ -168,29 +164,26 @@
             Kilimanjaro
         </item>
         <item>
-            This country is popularly knowns\n
-            as ‘land of the windmills’:
+            This country is popularly knowns as ‘land of the windmills’:
             Netherlands
         </item>
         <item>
-            A person able to use both hands\n
-            with equal skill:
+            A person able to use both hands with equal skill:
             Ambidextrous
         </item>
 
+        <!-- 40 -->
+
         <item>
-            Formations that come down\n
-            from the ceiling in a cave:
+            Formations that come down from the ceiling in a cave:
             Stalactites
         </item>
         <item>
-            A reptile in New Zealand\n
-            which has a third eye on its forehead:
+            A reptile in New Zealand which has a third eye on its forehead:
             Tuatara
         </item>
         <item>
-            For producing high frequency\n
-            carrier wave we can use:
+            For producing high frequency carrier wave we can use:
             Oscillator
         </item>
         <item>
@@ -198,13 +191,11 @@
             Mushroom
         </item>
         <item>
-            This non-metal conducts electricity\n
-            by the movement of electrons:
+            This non-metal conducts electricity by the movement of electrons:
             Graphite
         </item>
         <item>
-            Epic is a web browser\n
-            made by which country?:
+            Epic is a web browser made by which country?:
             India
         </item>
         <item>
@@ -212,8 +203,7 @@
             Photosphere
         </item>
         <item>
-            The day on which the Sun’s direct\n
-            rays cross the celestial equator:
+            The day on which the Sun’s direct rays cross the celestial equator:
             Equinox
         </item>
         <item>
@@ -225,14 +215,14 @@
             Fahrenheit
         </item>
 
+        <!-- 50 -->
 
         <item>
             Who said, \"God does not play dice with the universe\"?:
             Einstein
         </item>
         <item>
-            What is a tropical cyclone called\n
-            in the Atlantic Ocean?:
+            What is a tropical cyclone called in the Atlantic Ocean?:
             Hurricane
         </item>
         <item>
@@ -240,8 +230,7 @@
             Fuselage
         </item>
         <item>
-            This millionaire industrialist\n
-            started in Cleveland:
+            This millionaire industrialist started in Cleveland:
             Rockefeller
         </item>
         <item>
@@ -249,8 +238,7 @@
             Troposphere
         </item>
         <item>
-            The hot desert which is covered\n
-            with large rocks:
+            The hot desert which is covered with large rocks:
             Hamada
         </item>
         <item>
@@ -262,8 +250,7 @@
             Cartography
         </item>
         <item>
-            The rocky crust of the earth\n
-            on which we live:
+            The rocky crust of the earth on which we live:
             Lithosphere
         </item>
         <item>
@@ -271,13 +258,14 @@
             Ablation
         </item>
 
+        <!-- 60 -->
+
         <item>
             Limestone when metamorphosed is:
             Marble
         </item>
         <item>
-            The most important factor for\n
-            determining the climate of a place:
+            The most important factor for determining the climate of a place:
             Latitude
         </item>
         <item>
@@ -285,8 +273,7 @@
             Copper
         </item>
         <item>
-            What compelled the Neolithic men\n
-            to stay in one place?:
+            What compelled the Neolithic men to stay in one place?:
             Agriculture
         </item>
         <item>
@@ -294,8 +281,7 @@
             Ptolemy
         </item>
         <item>
-            This is the only animal in the world\n
-            to have four horns:
+            This is the only animal in the world to have four horns:
             Chausingha
         </item>
         <item>
@@ -315,9 +301,10 @@
             Scotland
         </item>
 
+        <!-- 70 -->
+
         <item>
-            This sport was the first\n
-            to have a world championship:
+            This sport was the first to have a world championship:
             Billiards
         </item>
         <item>
@@ -341,8 +328,7 @@
             Kalimba
         </item>
         <item>
-            This instrument is thought to be\n
-            closest to the human voice:
+            This instrument is thought to be closest to the human voice:
             Violin
         </item>
         <item>
@@ -358,14 +344,14 @@
             Narcissus
         </item>
 
+        <!-- 80 -->
+
         <item>
-            In mythology, this nymph\n
-            was turned into a laurel bush:
+            In mythology, this nymph was turned into a laurel bush:
             Daphne
         </item>
         <item>
-            This American state was named\n
-            for the wife of Charles I:
+            This American state was named for the wife of Charles I:
             Maryland
         </item>
         <item>
@@ -389,8 +375,7 @@
             Barrel
         </item>
         <item>
-            Which black and white bird\n
-            is usually accused of stealing?:
+            Which black and white bird is usually accused of stealing?:
             Magpie
         </item>
         <item>
@@ -401,6 +386,8 @@
             What is kelp?:
             Seaweed
         </item>
+
+        <!-- 90 -->
 
         <item>
             A legendary chief of the Onondaga tribe:
@@ -415,8 +402,7 @@
             Hymn
         </item>
         <item>
-            The legendary son\n
-            of British king Luther Pendragon:
+            The legendary son of British king Luther Pendragon:
             Arthur
         </item>
         <item>
@@ -424,29 +410,27 @@
             Frequency
         </item>
         <item>
-            A line running through places\n
-            of equal pressure:
+            A line running through places of equal pressure:
             Isobar
         </item>
         <item>
-            From this creature\n
-            sepia was originally obtained:
+            From this creature sepia was originally obtained:
             Cuttlefish
         </item>
         <item>
-            A surveyor use to measure\n
-            horizontal and vertical angles:
+            A surveyor use to measure horizontal and vertical angles:
             Theodolite
         </item>
         <item>
-            It is the common name for the tree\n
-            known as the arbutus:
+            It is the common name for the tree known as the arbutus:
             Strawberry
         </item>
         <item>
-            The Carthaginian general who defeated\n
-            the Romans at the Battle of Cannae:
+            The Carthaginian general who defeated the Romans at the Battle of Cannae:
             Hannibal
         </item>
+
+        <!-- 100 -->
+
     </string-array>
 </resources>
