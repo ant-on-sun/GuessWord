@@ -1,10 +1,13 @@
 package com.an_ant_on_the_sun.guessword.view;
 
+import android.annotation.TargetApi;
 import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
+import android.media.AudioAttributes;
 import android.media.AudioManager;
 import android.media.SoundPool;
+import android.os.Build;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -58,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
     private int mButtonClickSoundId;
     private int mSoundWinFileId;
     private int mStreamID;
-    private List<String> stickmanSoundFileName; //= new FileNames().getStickmanSounds();
+    private List<String> stickmanSoundFileName;
     private int[] stickmanSoundFileId;
 
     private ConstraintLayout mConstraintLayout;
@@ -232,7 +235,14 @@ public class MainActivity extends AppCompatActivity {
             editTextIsEnabled = true;
         }
 
-        mSoundPool = new SoundPool(3, AudioManager.STREAM_MUSIC,0);
+        //mSoundPool = new SoundPool(3, AudioManager.STREAM_MUSIC, 0);
+        if (android.os.Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+            // For devices with OS Android less than 5
+            createOldSoundPool();
+        } else {
+            // For new devices with OS Android equal or more than 5
+            createNewSoundPool();
+        }
         mAssetManager = getAssets();
         mButtonClickSoundId = getSoundFileId(FileNames.BUTTON_CLICK_FILE_NAME);
         mSoundWinFileId = getSoundFileId(FileNames.SOUND_WIN_FILE_NAME);
@@ -400,8 +410,22 @@ public class MainActivity extends AppCompatActivity {
 
 //        mSoundPool = new SoundPool(3, AudioManager.STREAM_MUSIC,0);
 //        mAssetManager = getAssets();
+    }
 
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    private void createNewSoundPool(){
+        AudioAttributes attributes = new AudioAttributes.Builder()
+                .setUsage(AudioAttributes.USAGE_GAME)
+                .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                .build();
+        mSoundPool = new SoundPool.Builder()
+                .setAudioAttributes(attributes)
+                .build();
+    }
 
+    @SuppressWarnings("deprecation")
+    private  void createOldSoundPool(){
+        mSoundPool = new SoundPool(3, AudioManager.STREAM_MUSIC, 0);
     }
 
     private int getSoundFileId(String fileName){

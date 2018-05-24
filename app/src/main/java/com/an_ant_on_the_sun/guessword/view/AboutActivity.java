@@ -46,7 +46,11 @@ public class AboutActivity extends AppCompatActivity {
         super.onStop();
     }
 
-    public void onRateAppButtonClick(View view){}
+    public void onRateAppButtonClick(View view){
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW,
+                Uri.parse("market://details?id=ru.alexanderklimov.crib"));//to change to my adress of app in market
+        startActivity(browserIntent);
+    }
 
     public void onSupportDeveloperButtonClick(View view){
         Intent browserIntent = new Intent(Intent.ACTION_VIEW,

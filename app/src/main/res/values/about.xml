@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="about_info">
-        Some info about program
+        \n
+        Application Guess Word\n
+        Application version: 1.0\n
+        Minimal Android version: 4.0.3\n
+        License: free\n\n
+        The goal of the game is to guess the closed word.\n
+        You can guess both one-by-one letter and the whole word at once.\n
     </string>
 </resources>

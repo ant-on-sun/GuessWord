@@ -5,6 +5,7 @@
     android:id="@+id/mConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/pale_green_background"
     tools:context=".view.AboutActivity">
 
     <ScrollView
@@ -38,6 +39,8 @@
         android:layout_marginBottom="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:background="@color/green"
+        android:onClick="onSupportDeveloperButtonClick"
         android:text="@string/support_developer"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -51,6 +54,8 @@
         android:layout_marginBottom="16dp"
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
+        android:background="@color/green"
+        android:onClick="onRateAppButtonClick"
         android:text="@string/rate_app"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"

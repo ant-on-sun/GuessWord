@@ -4,6 +4,10 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="pale_green">#ccff99</color>
+    <color name="pale_green_background">#ccffcc</color>
+    <color name="green">#66ff66</color>
+    <color name="pale_purple">#f2d9e6</color>
+    <color name="purple">#e699ff</color>
     <color name="pale_yellow">#ffffcc</color>
     <color name="light_green">#00ffaa</color>
 </resources>
