@@ -48,7 +48,7 @@ public class AboutActivity extends AppCompatActivity {
 
     public void onRateAppButtonClick(View view){
         Intent browserIntent = new Intent(Intent.ACTION_VIEW,
-                Uri.parse("market://details?id=ru.alexanderklimov.crib"));//to change to my adress of app in market
+                Uri.parse("https://play.google.com/store/apps/details?id=com.an_ant_on_the_sun.guessword"));
         startActivity(browserIntent);
     }
 
