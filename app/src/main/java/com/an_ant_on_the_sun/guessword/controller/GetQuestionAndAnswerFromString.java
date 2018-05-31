@@ -7,12 +7,12 @@ import com.an_ant_on_the_sun.guessword.BuildConfig;
 public class GetQuestionAndAnswerFromString {
     private static final String TAG = "GuessWord";
 
-    public static String[] getQuestionAndAnswer(String s){
+    public static String[] getQuestionAndAnswer(String s, String splitChar){
         String[] partsOfString;
         if (s.contains(":")){
-            partsOfString = s.split(":");
+            partsOfString = s.split(splitChar);
         } else {
-            String exception = "String " + s + " doesn't contain ':'";
+            String exception = "String " + s + " doesn't contain split character '" + splitChar + "'";
             if (BuildConfig.DEBUG){
                 Log.d(TAG, "In GetQuestionAndAnswerFromString, " + exception);
             }

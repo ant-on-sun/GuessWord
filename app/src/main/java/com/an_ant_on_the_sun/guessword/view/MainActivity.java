@@ -23,6 +23,7 @@ import android.widget.Toast;
 
 import com.an_ant_on_the_sun.guessword.BuildConfig;
 import com.an_ant_on_the_sun.guessword.R;
+import com.an_ant_on_the_sun.guessword.controller.CheckQuizList;
 import com.an_ant_on_the_sun.guessword.controller.GetQuestionAndAnswerFromString;
 
 import java.io.IOException;
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String KEY_OPENED_LETTERS = "OPENED_LETTERS";
     private static final String KEY_TEXT_INFO = "TEXT_INFO";
     private static final String KEY_EDIT_TEXT_IS_ENABLED = "EDIT_TEXT_IS_ENABLED";
+    private static final String SPLIT_CHAR = ":";
     private static final int MAX_WORD_LENGTH = 12;
     private static final int MAX_NUMBER_OF_WRONGS = 7;
 
@@ -230,7 +232,8 @@ public class MainActivity extends AppCompatActivity {
             mIndexOfElementInShuffledList = 0;
             numberOfWrongs = 0;
             quizArray = getResources().getStringArray(R.array.quiz_array);
-            quizList = Arrays.asList(quizArray);
+            quizList = new ArrayList<>(Arrays.asList(quizArray));
+            quizList = CheckQuizList.removeWrongStrings(quizList, SPLIT_CHAR);
             Collections.shuffle(quizList);
             editTextIsEnabled = true;
         }
@@ -342,7 +345,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupQuizDesignationAndAnswer(){
         String[] partsOfString = GetQuestionAndAnswerFromString
-                .getQuestionAndAnswer(quizList.get(mIndexOfElementInShuffledList));
+                .getQuestionAndAnswer(quizList.get(mIndexOfElementInShuffledList), SPLIT_CHAR);
         textViewDesignation.setText(partsOfString[0]);
         quizAnswer = partsOfString[1].trim().toUpperCase();
         numberOfLetters = quizAnswer.length();
