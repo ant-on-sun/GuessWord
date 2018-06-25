@@ -3,10 +3,10 @@ apply plugin: 'com.android.application'
 android {
     signingConfigs {
         config {
-            keyAlias 'key_for_an_ant_on_the_sun_apps'
-            keyPassword 'AliasKeyk1k2k3k4k5k6k7'
-            storeFile file('C:/Users/LT-N1/AndroidStudioProjects/key_store_android_apps/key_store_android_apps.jks')
-            storePassword 'Kk1k2k3k4k5k6k7'
+            keyAlias 'keyAlias'
+            keyPassword 'key password'
+            storeFile file('Path to file .jks')
+            storePassword 'store password'
         }
     }
     compileSdkVersion 27
